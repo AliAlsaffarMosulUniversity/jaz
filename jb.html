@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ar" manifest="cache.appcache">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>مكتب الجزيرة لألعاب البلايستيشن والحاسبات</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        min-height: 100%;
+        background: #0b0d10;
+        color: #c8ced8;
+        font:
+          15px/1.45 "Segoe UI",
+          system-ui,
+          sans-serif;
+      }
+      #brand {
+        text-align: center;
+        padding: 8px 10px;
+        background: #0e1116;
+        border-bottom: 1px solid #1e2732;
+      }
+#brand b {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: #e6ebf2;
+        vertical-align: middle;
+      }
+
+      /* running: a spinner under the brand. jb.js sets body.done / body.fail / body.log. */
+      #spin {
+        position: fixed;
+        top: calc(50% + 20px);
+        left: 50%;
+        width: 46px;
+        height: 46px;
+        margin: -23px 0 0 -23px;
+        border: 4px solid #1e2732;
+        border-top-color: #7fd0a0;
+        border-radius: 50%;
+        animation: spin 0.9s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      #msg {
+        position: fixed;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        display: none;
+      }
+      #wrap {
+        padding: 0;
+      }
+      #state,
+      #out {
+        display: none;
+      }
+
+      body.done #spin {
+        display: none;
+      }
+      body.fail #spin {
+        display: none;
+      }
+      body.fail #msg {
+        display: block;
+      }
+
+      /* ?log=1 -- the full step log, styled like the landing. */
+      body.log #spin,
+      body.log #msg {
+        display: none;
+      }
+      body.log #wrap {
+        padding: 14px 18px;
+      }
+      body.log #state {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        margin: 0 0 8px;
+      }
+      body.log #out {
+        display: block;
+        white-space: pre-wrap;
+        font:
+          12px/1.45 Consolas,
+          monospace;
+        background: #11151b;
+        border: 1px solid #1e2732;
+        border-radius: 5px;
+        padding: 10px 12px;
+        height: calc(100vh - 141px);
+        overflow-y: auto;
+      }
+      .ok {
+        color: #7fd0a0;
+      }
+      .bad {
+        color: #d08a7f;
+      }
+      .warn {
+        color: #d8c07f;
+      }
+      .safe {
+        color: #7fd0a0;
+      }
+      .danger {
+        color: #d08a7f;
+      }
+      code {
+        color: #9fb3d0;
+      }
+    </style>
+  <meta name="description" content="مكتب الجزيرة لألعاب البلايستيشن والحاسبات. للتواصل: +964 771 715 8661"><style>
+/* Al Jazeera identity */
+html,body{background:#080c1b;color:#edf4ff;font-family:Tahoma,'Segoe UI',sans-serif}
+#brand{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 6%;background:#0c1228;border-bottom:1px solid #263c66;direction:rtl}
+#brand img{width:86px;height:86px;border-radius:18px;object-fit:cover}
+#brand b{font-size:24px;letter-spacing:0;color:#fff}
+.brand-sub{color:#91a4c7;font-size:13px;margin-top:8px}
+a{color:#72e6ff}.contact{display:inline-block;border:1px solid #22d3ee;border-radius:30px;padding:12px 20px;text-decoration:none;background:#12314a;white-space:nowrap}
+.hero{position:relative;max-width:1120px;margin:28px auto 0;border:1px solid #304174;border-radius:24px;overflow:hidden;background:#11182e;direction:rtl}
+.hero img{display:block;width:100%;max-height:360px;object-fit:cover}
+.hero-copy{padding:24px 30px;background:linear-gradient(120deg,#10172e,#1b1743)}
+.hero h1{font-size:32px;margin:0 0 10px}.hero p{color:#b7c8e5;line-height:1.8;margin:0}.symbols{letter-spacing:15px;color:#6fe4ff;font-size:30px;margin-bottom:12px}
+.platforms{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.platforms span{padding:7px 14px;border:1px solid #40517d;border-radius:10px;color:#d4ddfa}
+#spin{position:relative;top:auto;left:auto;margin:28px auto;width:32px;height:32px;border-top-color:#41d9fa}
+#msg{position:relative;top:auto;transform:none;padding:22px;color:#ffd28c}
+.footer{text-align:center;padding:24px;color:#93a7cc;font-size:13px;direction:rtl}
+body.log .hero,body.log .footer{display:none}
+@media(max-width:640px){#brand{padding:14px;flex-wrap:wrap}#brand b{font-size:19px}#brand img{width:64px;height:64px}.contact{font-size:13px}.hero{margin:16px 12px 0}.hero h1{font-size:24px}.hero-copy{padding:22px}.hero img{height:230px}}
+</style></head>
+  <body>
+    <div id="brand"><img src="logo.svg" alt="شعار مكتب الجزيرة"><div><b>مكتب الجزيرة</b><div class="brand-sub">لألعاب البلايستيشن والحاسبات</div></div><a class="contact" href="https://wa.me/9647717158661" target="_blank" rel="noopener">واتساب <span dir="ltr">+964 771 715 8661</span></a></div><section class="hero" aria-label="مكتب الجزيرة للألعاب"><img src="img/gaming-hero.png" alt="شخصية كريتوس وأجهزة بلايستيشن وإكس بوكس وحاسوب ألعاب"><div class="hero-copy"><div class="symbols" aria-label="رموز أزرار اللعب">○ □ △ ×</div><h1>عالم الألعاب يبدأ من الجزيرة</h1><p>مكتب الجزيرة لألعاب البلايستيشن والحاسبات — تواصل معنا للاستفسار عن الأجهزة والألعاب والملحقات.</p><div class="platforms"><span>PlayStation</span><span>Xbox</span><span>PC Gaming</span></div></div></section>
+    <div id="spin"></div>
+    <div id="msg">أعد تشغيل جهازك — Restart your console</div>
+    <div id="wrap">
+      <div id="state"></div>
+      <div id="out"></div>
+    </div>
+    <script type="module">
+      import "./jb.js?v=10";
+    </script>
+  <footer class="footer">مكتب الجزيرة • <a href="tel:+9647717158661" dir="ltr">+964 771 715 8661</a><br>أسماء المنصات وشخصيات الألعاب تعود لأصحابها.</footer></body>
+</html>
