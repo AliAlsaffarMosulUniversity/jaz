@@ -45,11 +45,13 @@ body.light footer{background:rgba(255,255,255,.85);color:#4f6175;border-color:#d
 body.light .hero{background-color:rgba(255,255,255,.56);box-shadow:0 10px 24px rgba(21,46,72,.12)}
 @media(max-width:600px){header{padding:10px 12px;justify-content:center;gap:9px}.brand{width:100%;justify-content:center}.brand img{width:46px;height:46px}h1{font-size:20px}.theme-switch{width:100%;max-width:280px}.hero{height:88px}main{padding:12px}.panel,.tile{padding:15px}.tile{flex-basis:100%}.action{display:block;margin:10px 0}h2{font-size:19px}}
 @media(prefers-reduced-motion:reduce){.action,button{transition:none}}
+.address-strip{background:rgba(15,33,56,.9);color:#ffdda1;border:1px solid rgba(220,178,94,.6);border-radius:10px;padding:9px 14px;margin:-7px 0 15px;text-align:center;font-size:15px;font-weight:bold}body.light .address-strip{background:rgba(255,250,238,.94);color:#805315;border-color:#c6a264}
 </style></head>
 <body>
 <header><div class="brand"><img src="logo.svg" alt="شعار مكتب الجزيرة"><div><h1>مكتب الجزيرة</h1><p>ألعاب البلايستيشن والحاسبات | AL JAZEERA GAME CENTER</p></div></div><button type="button" id="themeSwitch" class="theme-switch" onclick="toggleTheme()" aria-label="التبديل بين الوضع الليلي والنهاري" aria-pressed="false">☀ الوضع النهاري</button></header>
 <main>
 <div class="hero" role="img" aria-label="أجهزة ألعاب"></div>
+<div class="address-strip" aria-label="عنوان المكتب">📍 عنوان المكتب: العراق - الموصل - دورة سيدتي الجميلة</div>
 <section class="panel main">
 <h2>واجهة التشغيل التقنية الأصلية</h2>
 <p>ملفات تشغيل المضيف الأصلي موجودة في هذا المستودع. هذه الصفحة تفتح <strong>jb.html</strong> الذي يستدعي <strong>jb.js</strong>، وليست محاكاة أو زرّاً شكلياً.</p>
@@ -69,7 +71,7 @@ body.light .hero{background-color:rgba(255,255,255,.56);box-shadow:0 10px 24px r
 <div id="result" aria-live="polite">اختر أداة فحص لعرض النتيجة.</div>
 </section>
 <p class="muted">المصدر التقني: مشروع w90008/91. لم يتم التحقق من ترخيص إعادة التوزيع؛ راجع SOURCE-NOTICE.md. التوافق هنا مستنتج من ملفات المستودع وليس من اختبار على جهاز.</p>
-</main><footer>مكتب الجزيرة | +964 771 715 8661</footer>
+</main><footer>مكتب الجزيرة | +964 771 715 8661<br>📍 العراق - الموصل - دورة سيدتي الجميلة</footer>
 <script>
 function setTheme(mode){
   var light=mode==='light';
