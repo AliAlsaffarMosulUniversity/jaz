@@ -1,30 +1,29 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>مكتب الجزيرة | PS4</title>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مكتب الجزيرة | PS4 Tools</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#091323;color:#eef5ff;font:17px Arial,Tahoma,sans-serif}
-header{background:linear-gradient(125deg,#0a1832,#123d6b 55%,#07152b);border-bottom:3px solid #19baff;padding:14px 12px;text-align:center}
-h1{margin:0 0 8px;font-size:25px}header p{margin:0;color:#a8c8eb}
-main{max-width:950px;margin:auto;padding:16px 12px}
-.grid{display:flex;flex-wrap:wrap;gap:15px}.tile{flex:1 1 230px;background:#142b4b;border:1px solid #28537b;border-radius:12px;padding:22px}
-.tile h2{margin:0 0 12px;color:#59d8ff}.tile p{line-height:1.8;color:#c9d8ed}
-.note{background:#10233d;border-right:4px solid #35c8ff;padding:15px;margin:20px 0}
-button{padding:12px 22px;border:0;border-radius:8px;background:#21b5f4;color:#071524;font-weight:bold;cursor:pointer}
-#result{margin-top:14px;white-space:pre-wrap;line-height:1.9}
-footer{text-align:center;padding:25px;color:#b5cce6}
-</style></head>
-<body>
-<header><img src="logo.svg" alt="شعار مكتب الجزيرة" style="width:66px;height:66px;object-fit:contain" onerror="this.style.display='none'"><h1>مكتب الجزيرة</h1><p>لألعاب البلايستيشن والحاسبات | AL JAZEERA GAME CENTER</p></header>
-<main>
-<div class="note">لوحة معلومات مستقلة تعمل من ملفات المستودع. هذه الصفحة لا تشغّل استغلالات أو تعديلات للنظام تلقائياً.</div>
-<img src="img/gaming-hero.png" alt="تصميم ألعاب مكتب الجزيرة" style="display:block;width:100%;max-height:190px;object-fit:contain;margin:0 auto 24px" onerror="this.style.display='none'"><div class="grid">
-<section class="tile"><h2>PS4 9.00</h2><p>قسم معلومات توافق النظام وإدارة الملفات المحلية.</p></section>
-<section class="tile"><h2>PS4 11.00</h2><p>قسم معلومات توافق النظام وإدارة الملفات المحلية.</p></section>
-<section class="tile"><h2>PS4 12.52</h2><p>قسم التحقق من الدعم والتوافق؛ لا يُفترض توفر أدوات تشغيل لهذا الإصدار.</p></section>
-</div>
-<section class="tile" style="margin-top:18px"><h2>مكتبة الأدوات</h2><p>تُضاف هنا الملفات المحلية المرخّصة بعد مراجعة المصدر والتوافق. لا توجد أدوات تشغيل معتمدة حالياً.</p></section><section class="tile" style="margin-top:18px"><h2>فحص المتصفح</h2><button onclick="diagnose()">تشخيص الجهاز</button><div id="result" aria-live="polite"></div></section>
+*{box-sizing:border-box}body{margin:0;background:#071323;color:#f2f7ff;font:16px Arial,Tahoma,sans-serif}
+header{background:linear-gradient(110deg,#0b1b36,#154574,#0a1a35);border-bottom:2px solid #36cbff;text-align:center;padding:8px 12px}
+header img{width:48px;height:48px;vertical-align:middle}header h1{display:inline-block;font-size:23px;margin:0 12px;vertical-align:middle}header small{display:block;color:#b9d8f7;margin:5px}
+main{max-width:1100px;margin:auto;padding:12px}.banner{height:90px;background:#102440 url('img/gaming-hero.png') center center/contain no-repeat;border-radius:10px;margin-bottom:12px}
+h2{font-size:21px;color:#59d9ff;margin:12px 0}.grid{display:flex;flex-wrap:wrap;gap:12px}.tile{flex:1 1 270px;background:#152e50;border:1px solid #2a5b87;border-radius:10px;padding:15px;min-width:0}
+.tile h3{font-size:22px;color:#62d7ff;margin:0 0 12px}.tools{display:flex;flex-wrap:wrap;gap:8px}
+button{background:#21b8f0;color:#071728;border:0;border-radius:7px;padding:12px;font-weight:bold;font-size:15px;cursor:pointer}
+button.secondary{background:#254c73;color:#e7f4ff;border:1px solid #4b87ad}button:focus{outline:3px solid #fff}
+.note{color:#b9cfe4;font-size:14px;line-height:1.7}.panel{background:#112843;border:1px solid #2b547c;padding:14px;border-radius:9px;margin-top:12px}
+#result{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}footer{text-align:center;padding:20px;color:#a9c8e5}
+@media(max-width:550px){.banner{height:65px}header h1{font-size:19px}.tile{flex-basis:100%}}
+</style></head><body>
+<header><img src="logo.svg" alt="شعار مكتب الجزيرة"><h1>مكتب الجزيرة</h1><small>AL JAZEERA GAME CENTER | ألعاب البلايستيشن والحاسبات</small></header>
+<main><div class="banner" role="img" aria-label="أجهزة الألعاب والحاسبات"></div>
+<h2>لوحة الأدوات المباشرة</h2><div class="grid">
+<section class="tile"><h3>PS4 9.00</h3><div class="tools"><button onclick="showInfo('9.00')">معلومات التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">أدوات تعديل النظام: لم تُتحقق ملفات تشغيل محلية لهذا القسم.</p></section>
+<section class="tile"><h3>PS4 11.00</h3><div class="tools"><button onclick="showInfo('11.00')">معلومات التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">أدوات تعديل النظام: لم تُتحقق ملفات تشغيل محلية لهذا القسم.</p></section>
+<section class="tile"><h3>PS4 12.52</h3><div class="tools"><button onclick="showInfo('12.52')">حالة التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">لا نفترض دعم أدوات تعديل النظام دون تحقق مستقل.</p></section>
+</div><div class="panel"><h2>الأدوات المساعدة</h2><div class="tools"><button onclick="diagnose()">تشخيص الجهاز</button><button class="secondary" onclick="connection()">حالة الاتصال</button></div><p id="result" aria-live="polite">اختر أداة لعرض نتيجتها هنا.</p></div>
 </main><footer>مكتب الجزيرة | +964 771 715 8661</footer>
 <script>
-function diagnose(){var x=document.getElementById('result');x.textContent='المتصفح: '+navigator.userAgent+'\nالاتصال: '+(navigator.onLine?'متصل':'غير متصل')+'\nJavaScript: يعمل';}
+function output(s){document.getElementById('result').textContent=s}
+function diagnose(){output('المتصفح: '+navigator.userAgent+'\nJavaScript: يعمل\nالاتصال: '+(navigator.onLine?'متصل':'غير متصل'))}
+function connection(){output(navigator.onLine?'المتصفح يبلغ عن وجود اتصال بالشبكة.':'المتصفح يبلغ عن عدم وجود اتصال بالشبكة.')}
+function showInfo(v){output('PS4 '+v+'\nقسم معلومات التوافق. لم يتم اعتماد ملفات تشغيل محلية لهذا الإصدار بعد.')}
 </script></body></html>
