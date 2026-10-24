@@ -1,29 +1,67 @@
 <!doctype html>
-<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>مكتب الجزيرة | PS4 Tools</title>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مكتب الجزيرة | PS4 Host</title>
+<meta name="description" content="مكتب الجزيرة لألعاب البلايستيشن والحاسبات - لوحة أدوات PS4 وملفات المضيف المحلي">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#071323;color:#f2f7ff;font:16px Arial,Tahoma,sans-serif}
-header{background:linear-gradient(110deg,#0b1b36,#154574,#0a1a35);border-bottom:2px solid #36cbff;text-align:center;padding:8px 12px}
-header img{width:48px;height:48px;vertical-align:middle}header h1{display:inline-block;font-size:23px;margin:0 12px;vertical-align:middle}header small{display:block;color:#b9d8f7;margin:5px}
-main{max-width:1100px;margin:auto;padding:12px}.banner{height:90px;background:#102440 url('img/gaming-hero.png') center center/contain no-repeat;border-radius:10px;margin-bottom:12px}
-h2{font-size:21px;color:#59d9ff;margin:12px 0}.grid{display:flex;flex-wrap:wrap;gap:12px}.tile{flex:1 1 270px;background:#152e50;border:1px solid #2a5b87;border-radius:10px;padding:15px;min-width:0}
-.tile h3{font-size:22px;color:#62d7ff;margin:0 0 12px}.tools{display:flex;flex-wrap:wrap;gap:8px}
-button{background:#21b8f0;color:#071728;border:0;border-radius:7px;padding:12px;font-weight:bold;font-size:15px;cursor:pointer}
-button.secondary{background:#254c73;color:#e7f4ff;border:1px solid #4b87ad}button:focus{outline:3px solid #fff}
-.note{color:#b9cfe4;font-size:14px;line-height:1.7}.panel{background:#112843;border:1px solid #2b547c;padding:14px;border-radius:9px;margin-top:12px}
-#result{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}footer{text-align:center;padding:20px;color:#a9c8e5}
-@media(max-width:550px){.banner{height:65px}header h1{font-size:19px}.tile{flex-basis:100%}}
-</style></head><body>
-<header><img src="logo.svg" alt="شعار مكتب الجزيرة"><h1>مكتب الجزيرة</h1><small>AL JAZEERA GAME CENTER | ألعاب البلايستيشن والحاسبات</small></header>
-<main><div class="banner" role="img" aria-label="أجهزة الألعاب والحاسبات"></div>
-<h2>لوحة الأدوات المباشرة</h2><div class="grid">
-<section class="tile"><h3>PS4 9.00</h3><div class="tools"><button onclick="showInfo('9.00')">معلومات التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">أدوات تعديل النظام: لم تُتحقق ملفات تشغيل محلية لهذا القسم.</p></section>
-<section class="tile"><h3>PS4 11.00</h3><div class="tools"><button onclick="showInfo('11.00')">معلومات التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">أدوات تعديل النظام: لم تُتحقق ملفات تشغيل محلية لهذا القسم.</p></section>
-<section class="tile"><h3>PS4 12.52</h3><div class="tools"><button onclick="showInfo('12.52')">حالة التوافق</button><button class="secondary" onclick="diagnose()">فحص المتصفح</button></div><p class="note">لا نفترض دعم أدوات تعديل النظام دون تحقق مستقل.</p></section>
-</div><div class="panel"><h2>الأدوات المساعدة</h2><div class="tools"><button onclick="diagnose()">تشخيص الجهاز</button><button class="secondary" onclick="connection()">حالة الاتصال</button></div><p id="result" aria-live="polite">اختر أداة لعرض نتيجتها هنا.</p></div>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#071425;color:#eaf4ff;font:16px/1.65 Arial,Tahoma,sans-serif}
+header{background:linear-gradient(115deg,#0d213e,#15517c,#0a1930);border-bottom:2px solid #3bcafa;padding:9px 12px;text-align:center}
+header img{width:48px;height:48px;object-fit:contain;vertical-align:middle}
+h1{font-size:22px;display:inline-block;margin:0 9px;vertical-align:middle}header p{font-size:13px;color:#bfdef4;margin:2px 0}
+main{max-width:1080px;margin:auto;padding:12px}
+.hero{height:85px;background:#122847 url('img/gaming-hero.png') center/contain no-repeat;border-radius:10px;border:1px solid #234669}
+h2{font-size:20px;color:#6bd8ff;margin:12px 0 8px}
+.panel,.tile{background:#122a4a;border:1px solid #2c5b81;border-radius:10px;padding:13px;margin-bottom:12px}
+.panel.main{border-color:#3baad8;background:#17395c}
+.grid{display:flex;flex-wrap:wrap;gap:11px}.tile{flex:1 1 240px;min-width:0;margin:0}
+h3{font-size:21px;margin:0 0 7px;color:#68dfff}
+p{margin:6px 0}.muted{color:#c3d5ea;font-size:14px}
+.action{display:inline-block;padding:11px 18px;text-decoration:none;border-radius:8px;background:#31baf2;color:#091625;font-weight:bold;margin:7px 8px 7px 0}
+.action.alt{background:#244f76;color:#eff9ff;border:1px solid #4a8dbb}
+.flag{display:inline-block;font-size:13px;padding:2px 8px;border-radius:6px;background:#283d55;color:#fff}
+.flag.warn{background:#513d24;color:#ffe2a3}
+button{font:inherit;background:#245980;color:#fff;border:1px solid #56a3ce;border-radius:7px;padding:10px 14px;cursor:pointer}
+#result{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;background:#0a1b31;border-radius:7px;padding:10px;min-height:50px}
+footer{text-align:center;color:#a9bed5;padding:17px}
+@media(max-width:550px){.hero{height:62px}h1{font-size:18px}.tile{flex-basis:100%}.action{display:block;text-align:center;margin:8px 0}}
+</style></head>
+<body>
+<header><img src="logo.svg" alt="شعار مكتب الجزيرة"><h1>مكتب الجزيرة</h1><p>ألعاب البلايستيشن والحاسبات | AL JAZEERA GAME CENTER</p></header>
+<main>
+<div class="hero" role="img" aria-label="أجهزة ألعاب"></div>
+<section class="panel main">
+<h2>واجهة التشغيل التقنية الأصلية</h2>
+<p>ملفات تشغيل المضيف الأصلي موجودة في هذا المستودع. هذه الصفحة تفتح <strong>jb.html</strong> الذي يستدعي <strong>jb.js</strong>، وليست محاكاة أو زرّاً شكلياً.</p>
+<a class="action" href="jb.html">فتح أداة التشغيل الأصلية</a>
+<a class="action alt" href="jb.html?log=1">فتح التشغيل مع السجل</a>
+<p class="muted">تنبيه: فتح أداة التشغيل يبدأ كود المشروع الأصلي تلقائياً على الأجهزة المتوافقة. لم يُختبر تشغيل نسخة مكتب الجزيرة على جهاز PS4 فعلي. لا تفتحها على إصدار غير متحقق من توافقه.</p>
+</section>
+<h2>حالة الإصدارات المطلوبة</h2>
+<div class="grid">
+<section class="tile"><h3>PS4 9.00</h3><span class="flag warn">غير مدعوم بالملفات الحالية</span><p class="muted">لا يتضمن ملف ps4_offsets.js مدخلاً للإصدار 9.00؛ لا يوجد زر تشغيل مخصص يمكن التحقق منه.</p></section>
+<section class="tile"><h3>PS4 11.00</h3><span class="flag warn">ملفات غير مكتملة</span><p class="muted">توجد إعدادات للإصدار 11.00، لكن ملفات patch وpayload الافتراضية التي يستدعيها الكود غير متوفرة.</p></section>
+<section class="tile"><h3>PS4 12.52</h3><span class="flag warn">غير مكتمل وغير مختبر</span><p class="muted">الكود نفسه يصف 12.52 بأنه غير مختبر على الجهاز، وملف patches/1250.bin المطلوب غير موجود.</p></section>
+</div>
+<section class="panel"><h2>GoldHEN والملفات المحلية</h2><p>الملف <strong>goldhen.bin</strong> موجود، وكذلك <strong>payload2.bin</strong>، لكن وجود الملف لا يعني إمكانية تشغيله منفرداً أو دعمه لكل إصدار. بعض ملفات التصحيح متوفرة فقط لإصدارات أخرى.</p>
+<button type="button" onclick="diagnose()">فحص المتصفح والاتصال</button>
+<button type="button" onclick="checkFiles()">فحص مسارات الملفات</button>
+<div id="result" aria-live="polite">اختر أداة فحص لعرض النتيجة.</div>
+</section>
+<p class="muted">المصدر التقني: مشروع w90008/91. لم يتم التحقق من ترخيص إعادة التوزيع؛ راجع SOURCE-NOTICE.md. التوافق هنا مستنتج من ملفات المستودع وليس من اختبار على جهاز.</p>
 </main><footer>مكتب الجزيرة | +964 771 715 8661</footer>
 <script>
-function output(s){document.getElementById('result').textContent=s}
-function diagnose(){output('المتصفح: '+navigator.userAgent+'\nJavaScript: يعمل\nالاتصال: '+(navigator.onLine?'متصل':'غير متصل'))}
-function connection(){output(navigator.onLine?'المتصفح يبلغ عن وجود اتصال بالشبكة.':'المتصفح يبلغ عن عدم وجود اتصال بالشبكة.')}
-function showInfo(v){output('PS4 '+v+'\nقسم معلومات التوافق. لم يتم اعتماد ملفات تشغيل محلية لهذا الإصدار بعد.')}
+function show(s){document.getElementById('result').textContent=s}
+function diagnose(){show('المتصفح: '+navigator.userAgent+'\nJavaScript: يعمل\nالاتصال: '+(navigator.onLine?'متصل':'غير متصل'))}
+function checkFiles(){
+ var names=['jb.html','jb.js','core.js','mem.js','ps4_offsets.js','goldhen.bin','payload2.bin','patches/1100.bin','patches/1250.bin'];
+ var lines=['فحص الملفات من نفس استضافة الموقع:'],done=0;
+ show('جار فحص المسارات...');
+ for(var i=0;i<names.length;i++){(function(i){
+  var x=new XMLHttpRequest();x.open('HEAD',names[i]+'?check='+new Date().getTime(),true);
+  x.onreadystatechange=function(){if(x.readyState===4){lines[i+1]=(x.status>=200&&x.status<300?'موجود: ':'مفقود/غير متاح: ')+names[i]+' ('+x.status+')';done++;if(done===names.length)show(lines.join('\n'))}};
+  x.onerror=function(){if(!lines[i+1]){lines[i+1]='تعذّر الفحص: '+names[i];done++;if(done===names.length)show(lines.join('\n'))}};
+  try{x.send(null)}catch(e){lines[i+1]='تعذّر الفحص: '+names[i];done++;if(done===names.length)show(lines.join('\n'))}
+ })(i)}
+}
 </script></body></html>
