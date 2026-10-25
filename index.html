@@ -2,109 +2,100 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#071426">
-<meta name="description" content="مكتب الجزيرة - PS4 Host">
-<title>مكتب الجزيرة | PS4 Host</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111e">
+<meta name="description" content="مكتب الجزيرة لألعاب البلايستيشن والحاسبات - PS4 HOST">
+<title>مكتب الجزيرة | PS4 HOST</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;min-height:100%;font-family:Arial,Tahoma,sans-serif}
-html{min-height:100%;background:#071426;color:#fff5dc}
-body{min-height:100vh;background:radial-gradient(ellipse at 50% 10%,#254875 0%,transparent 47%),linear-gradient(145deg,#030a16 0%,#0c2042 58%,#050c1a 100%);color:#fff5dc;display:flex;flex-direction:column;position:relative}
-body:before{content:"";position:fixed;z-index:0;pointer-events:none;left:0;top:0;right:0;bottom:0;background:linear-gradient(130deg,transparent 24%,rgba(193,140,43,.10) 48%,transparent 75%)}
+html{background:#060e1b}
+html,body{margin:0;min-height:100%;font-family:Tahoma,Arial,sans-serif}
+body{min-height:100vh;position:relative;color:#fff0cc;background:#081528 url('img/gaming-hero.png') center center/cover fixed no-repeat}
+body:before{content:"";position:fixed;left:0;right:0;top:0;bottom:0;z-index:0;background:linear-gradient(180deg,rgba(3,9,21,.78),rgba(6,17,34,.76) 43%,rgba(3,9,19,.94)),linear-gradient(100deg,rgba(2,12,24,.55),transparent 36%,rgba(2,12,24,.42));pointer-events:none}
+body:after{content:"";position:fixed;left:9%;right:9%;top:10%;height:48%;background:radial-gradient(ellipse at center,rgba(208,147,43,.14),transparent 68%);pointer-events:none}
 header,main,footer{position:relative;z-index:1}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 4%;border-bottom:1px solid rgba(238,192,101,.33);background:rgba(4,13,29,.65)}
-.brand{display:flex;align-items:center;gap:12px}
-.brand img{width:53px;height:53px;object-fit:contain;border-radius:9px;box-shadow:0 0 14px rgba(205,153,58,.17)}
-h1{font-size:23px;line-height:1.2;color:#ffe1a0;margin:0}
-.brand small{display:block;color:#b9cbe0;font-size:12px;margin-top:3px;letter-spacing:.8px}
-button{cursor:pointer;font-family:Arial,Tahoma,sans-serif;font-weight:bold}
-.theme{font-size:13px;color:#f5d995;border:1px solid rgba(227,183,98,.68);border-radius:25px;background:rgba(13,27,47,.8);padding:10px 15px}
-main{flex:1;display:flex;align-items:center;justify-content:center;padding:34px 18px}
-.launcher{width:100%;max-width:580px;text-align:center;padding:36px 22px 34px;border:1px solid rgba(248,202,107,.65);border-radius:22px;background:linear-gradient(135deg,rgba(9,25,45,.88),rgba(8,19,38,.75));box-shadow:0 18px 58px rgba(0,0,0,.37),inset 0 1px rgba(255,255,255,.08)}
-.launcher h2{font-size:clamp(27px,5vw,40px);letter-spacing:1px;margin:0 0 24px;color:#ffe3a9;text-shadow:0 3px 14px rgba(220,160,53,.21)}
-.launch{display:block;margin:0 auto;max-width:420px;width:100%;min-height:68px;padding:16px 22px;border-radius:14px;border:1px solid #ffe9a9;color:#422908;background:linear-gradient(112deg,#a56a18 0%,#eec36e 22%,#fff3c0 48%,#e6ac43 71%,#c18a32 100%);font-size:23px;box-shadow:inset 0 3px 2px rgba(255,255,255,.74),inset 0 -3px rgba(92,51,11,.12),0 7px 25px rgba(229,159,47,.28);text-shadow:0 1px rgba(255,255,255,.55)}
-.launch:hover,.launch:focus{filter:brightness(1.09);outline:2px solid #ffedb8;outline-offset:3px}
-.launch:disabled{opacity:.65;cursor:wait}
-#status{display:none;margin:17px auto 0;max-width:420px;font-size:15px;line-height:1.7;color:#e8d4ae}
+header{max-width:1280px;margin:10px auto 0;padding:9px 17px;background:rgba(3,12,25,.79);border:1px solid rgba(244,204,126,.39);border-radius:18px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.brand{display:flex;align-items:center;gap:11px;color:#ffdc92;font-size:17px;font-weight:bold}
+.brand img{width:46px;height:46px;object-fit:contain;border-radius:9px}
+.brand small{display:block;font:10px Tahoma,Arial,sans-serif;letter-spacing:3px;color:#c2d2e0;margin-top:4px;direction:ltr;text-align:right}
+button{font-family:Tahoma,Arial,sans-serif;cursor:pointer}
+.theme{background:rgba(8,20,40,.88);border:1px solid rgba(225,180,91,.5);padding:10px 16px;border-radius:22px;color:#f8d489;font-size:14px;white-space:nowrap}
+.theme:focus,.launch:focus,.diagnose:focus{outline:3px solid #fff2bb;outline-offset:3px}
+main{max-width:1230px;margin:auto;padding:14px 18px 15px;text-align:center}
+.identity{margin:0 auto 15px}
+.crown{font-size:39px;line-height:1.05;color:#e8bc68;text-shadow:0 0 22px rgba(255,192,74,.6)}
+h1{font-size:clamp(38px,5vw,68px);line-height:1.3;letter-spacing:1px;margin:0;color:#fce0a2;text-shadow:0 2px 1px #6a4317,0 5px 17px rgba(0,0,0,.9),0 0 28px rgba(253,172,45,.30)}
+.tag{margin:1px 0 13px;font:16px/1.5 Tahoma,Arial,sans-serif;letter-spacing:6px;color:#f4db9f;direction:ltr}
+.actions{max-width:530px;margin:0 auto}
+.launch{width:100%;min-height:77px;border-radius:15px;border:2px solid #ffedb2;background:linear-gradient(170deg,#8b5719 0%,#dfac55 14%,#fff1b7 39%,#d49a36 65%,#a77320 100%);color:#2e1d06;font-size:clamp(23px,3vw,32px);font-weight:bold;text-shadow:0 1px rgba(255,255,255,.65);box-shadow:inset 0 3px 2px rgba(255,255,255,.8),inset 0 -3px 5px rgba(74,40,6,.35),0 0 0 3px rgba(204,151,43,.13),0 0 35px rgba(245,171,54,.40),0 8px 22px rgba(0,0,0,.4);transition:filter .2s,transform .2s}
+.launch:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.launch[disabled]{opacity:.68;cursor:wait;transform:none}
+.diagnose{margin-top:10px;padding:10px 28px;background:rgba(6,16,32,.78);border:1px solid #bc914e;border-radius:9px;color:#f5dba0;font-size:14px}
+#status{display:none;margin:10px auto 0;max-width:580px;padding:9px 14px;border:1px solid rgba(233,182,88,.55);border-radius:9px;background:rgba(4,14,27,.92);color:#f7e0b2;font-size:14px;line-height:1.6}
 #status.visible{display:block}
-#spin{display:none;width:25px;height:25px;margin:14px auto 0;border-radius:50%;border:3px solid rgba(232,187,91,.25);border-top-color:#ffe4a6;animation:spin 1s linear infinite}
+#spin{display:none;width:25px;height:25px;margin:10px auto 0;border:3px solid rgba(255,225,151,.23);border-top-color:#f5d38c;border-radius:50%;animation:spin 1s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
+.gallery{display:flex;flex-wrap:nowrap;gap:13px;align-items:stretch;margin:24px 0 12px}
+.game-frame{display:block;position:relative;flex:1 1 0;min-width:0;margin:0;border-radius:15px;overflow:hidden;border:2px solid #cda45c;background:#0a192d;box-shadow:inset 0 0 3px #ffebae,0 0 0 3px rgba(11,19,35,.65),0 3px 17px rgba(248,183,74,.25),0 10px 30px rgba(0,0,0,.40);height:190px}
+.game-frame:after{content:"";position:absolute;left:0;right:0;top:0;bottom:0;border:1px solid rgba(255,236,166,.62);border-radius:12px;pointer-events:none}
+.game-frame img{display:block;width:100%;height:100%;object-fit:cover}
+footer{max-width:830px;margin:0 auto 15px;padding:11px 22px;background:rgba(3,12,25,.82);border:1px solid rgba(227,178,89,.43);border-radius:15px;box-shadow:0 6px 25px rgba(0,0,0,.35);color:#e9d09c;text-align:center;font-size:14px;line-height:1.8}
+.phone{direction:ltr;unicode-bidi:isolate;display:inline-block;white-space:nowrap;text-decoration:none;color:#ffe3a6;font-weight:bold}
+.phone:hover{text-decoration:underline}
+.sep{margin:0 16px;color:#bf9c5d}
 #state,#out{display:none}
-footer{text-align:center;color:#c6d3e4;padding:16px 12px 22px;font-size:13px;background:rgba(4,12,24,.23);line-height:1.9}
-html.light{background:#f3f6fb;color:#233652}
-html.light body{background:radial-gradient(ellipse at 45% 10%,#fff8e3,transparent 60%),linear-gradient(140deg,#ebf2fd,#faf8f0 58%,#e4edf7);color:#233652}
-html.light body:before{background:linear-gradient(130deg,transparent 25%,rgba(226,184,90,.12) 60%,transparent 88%)}
-html.light header{background:rgba(255,255,255,.73);border-bottom-color:#cba65d}
-html.light h1{color:#795019}
-html.light .brand small{color:#536b82}
-html.light .theme{background:#fff8e7;color:#725017;border-color:#c99c4e}
-html.light .launcher{background:linear-gradient(130deg,rgba(255,255,255,.94),rgba(254,249,234,.90));border-color:#d6af64;box-shadow:0 14px 44px rgba(44,63,94,.13)}
-html.light .launcher h2{color:#77501c;text-shadow:none}
-html.light #status{color:#624922}
-html.light footer{color:#4d6279}
 body.done #spin,body.fail #spin{display:none!important}
-@media(max-width:540px){header{padding:12px;gap:8px}.brand img{width:43px;height:43px}.brand{gap:8px}h1{font-size:19px}.brand small{font-size:10px}.theme{padding:9px 10px;font-size:12px}.launcher{padding:30px 18px}.launch{font-size:21px}}
-@media(prefers-reduced-motion:reduce){#spin{animation:none}}
-
-/* Gaming artwork: local image, unobstructed and independent of the old background. */
-main{flex-direction:column;justify-content:center;gap:18px;padding:18px 18px 28px}
-.game-art{position:relative;display:block;width:100%;max-width:1040px;height:clamp(135px,25vh,235px);overflow:hidden;border-radius:19px;border:1px solid rgba(244,196,101,.55);background:linear-gradient(110deg,rgba(5,17,34,.9),rgba(18,47,82,.82),rgba(6,17,35,.9));box-shadow:0 15px 42px rgba(0,0,0,.32);text-align:center}
-.game-art:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 33%,rgba(6,16,33,.23));z-index:1}
-.game-art img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
-.launcher{max-width:580px;width:100%}
-html.light .game-art{background:linear-gradient(115deg,#e7edf7,#fbf4df,#e2ecf7);border-color:#c9a15f;box-shadow:0 10px 25px rgba(44,63,94,.12)}
-@media(max-width:540px){main{gap:11px;padding:12px}.game-art{height:120px;border-radius:12px}.launcher{padding:23px 18px}}
-.phone-number{display:inline-block;direction:ltr;unicode-bidi:isolate;white-space:nowrap;color:inherit;text-decoration:none;font-variant-numeric:tabular-nums;font-family:Arial,Tahoma,sans-serif}
-.phone-number:hover,.phone-number:focus{color:#f5d083;text-decoration:underline}
+html.light{background:#e7ebf1}
+html.light body{color:#303d52;background-color:#e4e8ef}
+html.light body:before{background:linear-gradient(180deg,rgba(248,248,243,.86),rgba(242,246,251,.86) 48%,rgba(235,239,247,.94))}
+html.light header,html.light footer{background:rgba(252,251,247,.9);color:#77521b;border-color:#c9a15a}
+html.light .brand{color:#77501e}
+html.light .brand small{color:#425874}
+html.light .theme{background:#fff8e9;color:#684514}
+html.light h1{color:#7a5119;text-shadow:0 1px #ffe9ae,0 4px 10px rgba(99,59,5,.15)}
+html.light .crown{color:#986923}
+html.light .tag{color:#71501e}
+html.light .diagnose,html.light #status{color:#6c4a18;background:rgba(255,255,255,.89)}
+html.light .phone{color:#6d4919}
+@media(max-width:800px){header{margin:6px 9px 0}main{padding:14px 12px}.gallery{gap:10px}.game-frame{height:150px}h1{font-size:43px}}
+@media(max-width:540px){header{padding:8px 10px}.brand{font-size:15px}.brand img{width:38px;height:38px}.brand small{font-size:9px;letter-spacing:1px}.theme{padding:8px 10px;font-size:12px}.crown{font-size:30px}h1{font-size:36px}.tag{font-size:12px;letter-spacing:3px}.launch{min-height:63px;font-size:23px}.gallery{flex-wrap:wrap;gap:8px;margin-top:15px}.game-frame{flex:1 1 45%;height:135px}.sep{display:none}footer{margin:0 8px 12px;font-size:12px}.phone{display:block}}
+@media(prefers-reduced-motion:reduce){.launch{transition:none}#spin{animation:none}}
 </style>
 </head>
 <body>
-<header>
-<div class="brand"><img src="logo.svg" alt="مكتب الجزيرة"><div><h1>مكتب الجزيرة</h1><small>PS4 HOST · GOLDHEN</small></div></div>
-<button id="themeSwitch" class="theme" type="button" onclick="toggleTheme()" aria-label="تبديل الوضع الليلي والنهاري">☀ النهاري</button>
-</header>
+<header><div class="brand"><img src="logo.svg" alt="شعار مكتب الجزيرة"><div>مكتب الجزيرة<small>PS4 HOST | GOLDHEN</small></div></div><button id="themeSwitch" type="button" class="theme" onclick="toggleTheme()" aria-label="تبديل الوضع">☀ النهاري</button></header>
 <main>
-<div class="game-art"><img src="img/gaming-hero.png" alt="تصميم ألعاب مكتب الجزيرة" loading="eager"></div>
-<section class="launcher" aria-label="تشغيل الجلبريك">
-<h2>PS4 JAILBREAK</h2>
-<button id="launch" class="launch" type="button" onclick="launchJailbreak()">فتح الجلبريك</button>
-<div id="spin" aria-hidden="true"></div>
-<p id="status" role="status" aria-live="polite"></p>
-<div id="wrap" hidden><div id="state"></div><pre id="out"></pre></div>
-<div id="msg" hidden></div>
+<div class="identity"><div class="crown" aria-hidden="true">♛</div><h1>مكتب الجزيرة</h1><p class="tag">PS4 HOST | GOLDHEN</p></div>
+<div class="actions"><button id="launch" class="launch" type="button" onclick="launchJailbreak()">✦ فتح الجلبريك ✦</button><button class="diagnose" type="button" onclick="diagnose()">فحص المتصفح</button><div id="spin" aria-hidden="true"></div><p id="status" role="status" aria-live="polite"></p></div>
+<section class="gallery" aria-label="صور الألعاب">
+<figure class="game-frame"><img src="img/jaz-racing.svg" alt="ألعاب السباقات"></figure>
+<figure class="game-frame"><img src="img/jaz-adventure.svg" alt="ألعاب المغامرات"></figure>
+<figure class="game-frame"><img src="img/jaz-football.svg" alt="ألعاب كرة القدم"></figure>
+<figure class="game-frame"><img src="img/jaz-fantasy.svg" alt="ألعاب الفانتازيا"></figure>
 </section>
+<div id="wrap" hidden><div id="state"></div><pre id="out"></pre></div><div id="msg" hidden></div>
 </main>
-<footer>العراق - الموصل - دورة سيدتي الجميلة<br><a class="phone-number" href="tel:+9647717158661" dir="ltr"><bdi dir="ltr">+964 771 715 8661</bdi></a></footer>
+<footer><span>📍 العراق - الموصل - دورة سيدتي الجميلة</span><span class="sep">|</span><a class="phone" dir="ltr" href="tel:+9647717158661"><bdi dir="ltr">+964 771 715 8661</bdi></a></footer>
 <script>
-function setTheme(mode){
- var light=mode==='light',root=document.documentElement,button=document.getElementById('themeSwitch');
- root.className=light?'light':'';
- if(button)button.textContent=light?'☾ الليلي':'☀ النهاري';
-}
-function toggleTheme(){
- var mode=document.documentElement.className==='light'?'dark':'light';
- setTheme(mode);
- try{localStorage.setItem('jazTheme',mode)}catch(e){}
-}
+function setTheme(mode){var light=mode==='light';document.documentElement.className=light?'light':'';var b=document.getElementById('themeSwitch');if(b)b.textContent=light?'☾ الليلي':'☀ النهاري'}
+function toggleTheme(){var mode=document.documentElement.className==='light'?'dark':'light';setTheme(mode);try{localStorage.setItem('jazTheme',mode)}catch(e){}}
 (function(){var mode='dark';try{mode=localStorage.getItem('jazTheme')||'dark'}catch(e){}setTheme(mode)})();
-function statusText(text){var el=document.getElementById('status');el.textContent=text;el.className='visible'}
+function showStatus(t){var el=document.getElementById('status');el.textContent=t;el.className='visible'}
+function diagnose(){var m=/PlayStation\s+4[\/ ]([^;]+)/i.exec(navigator.userAgent||'');showStatus((m?'PS4 '+m[1]:'المتصفح: '+navigator.userAgent)+' | JavaScript: يعمل | '+(navigator.onLine?'متصل':'غير متصل'))}
 var started=false,checkTimer=null;
 function launchJailbreak(){
  if(started)return;
- if(!/PlayStation\s+4/i.test(navigator.userAgent||'')){statusText('افتح الموقع من متصفح PS4.');return}
+ if(!/PlayStation\s+4/i.test(navigator.userAgent||'')){showStatus('افتح الموقع من متصفح PS4.');return}
  started=true;
- var button=document.getElementById('launch'),spinner=document.getElementById('spin');
- button.disabled=true;spinner.style.display='block';
- statusText('جار تشغيل الأداة...');
+ var b=document.getElementById('launch'),sp=document.getElementById('spin');
+ b.disabled=true;sp.style.display='block';showStatus('جار تشغيل الأداة...');
  var script=document.createElement('script');script.type='module';script.src='jb.js?v=10';
- script.onerror=function(){spinner.style.display='none';statusText('تعذّر تحميل ملف التشغيل.');button.disabled=false;started=false};
+ script.onerror=function(){sp.style.display='none';showStatus('تعذّر تحميل ملف التشغيل.');b.disabled=false;started=false};
  document.body.appendChild(script);
  checkTimer=setInterval(function(){
-   if(document.body.className==='done'){clearInterval(checkTimer);spinner.style.display='none';statusText('اكتمل التشغيل بحسب نتيجة الأداة.')}
-   if(document.body.className==='fail'){clearInterval(checkTimer);spinner.style.display='none';statusText('تعذر التشغيل. تحقق من توافق إصدار PS4.')}
- },800);
+   if(document.body.className==='done'){clearInterval(checkTimer);sp.style.display='none';showStatus('اكتمل التشغيل بحسب نتيجة الأداة.')}
+   if(document.body.className==='fail'){clearInterval(checkTimer);sp.style.display='none';showStatus('تعذر التشغيل. تحقق من توافق إصدار PS4.')}
+ },800)
 }
 </script>
-</body>
-</html>
+</body></html>
